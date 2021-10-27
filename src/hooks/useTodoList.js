@@ -6,7 +6,6 @@ const useTodoList = () =>{
   
     const handleAddTodo = (todo)=>{
       setTodos([todo, ...todos]);
-      console.log(todos);
     }
   
     const handleChangeTodoValue = (getClickId)=>{

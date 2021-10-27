@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 
-export const TodoAddGroup = ({onAddTodo})=>{
+export const TodoAddGroup = ({onAddTodo, setTodoState})=>{
     const defaultTodo = { id:Math.random(), name:"", done:false };
     const [todo, setTodo] = useState(defaultTodo);
 
     const submitTodoAdd = ()=>{
-        onAddTodo && onAddTodo(todo)
-        setTodo(defaultTodo)
+        if(todo.name!==""){
+            onAddTodo && onAddTodo(todo)
+            setTodo(defaultTodo)
+            setTodoState('all')
+        }else alert("請輸入待辦事項")
     };
 
     return(
